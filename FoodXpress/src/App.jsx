@@ -13,21 +13,7 @@ import Restaurants from './pages/Restaurants/Restaurants';
 import Offers from './pages/Offers/Offers';
 
 // Order Management imports
-// import OrderApp from './modules/order-management/OrderApp.jsx';
-
-// Temporary placeholder for order routes
-const OrderPlaceholder = () => (
-  <div style={{ padding: '20px', textAlign: 'center' }}>
-    <h2>Order Management</h2>
-    <p>This feature is under development.</p>
-  </div>
-);
-
-// Dashboard Analytics imports
-import { ThemeProvider } from './modules/dashboard-analytics/context/ThemeContext';
-import { CacheProvider } from './modules/dashboard-analytics/context/CacheContext';
-import Layout from './modules/dashboard-analytics/app/layout/Layout';
-import AppRouter from './modules/dashboard-analytics/app/router/index';
+import OrderApp from './modules/order-management/OrderApp.jsx';
 
 function AppContent() {
   const location = useLocation();
@@ -55,12 +41,12 @@ function AppContent() {
         <Route path="/menu" element={<Menu />} />
         <Route path="/restaurants" element={<Restaurants />} />
         <Route path="/offers" element={<Offers />} />
-        <Route path="/cart/*" element={<OrderPlaceholder />} />
-        <Route path="/checkout/*" element={<OrderPlaceholder />} />
-        <Route path="/orders/*" element={<OrderPlaceholder />} />
-        <Route path="/order-status/*" element={<OrderPlaceholder />} />
-        <Route path="/order-summary/*" element={<OrderPlaceholder />} />
-        <Route path="/order-tracking/*" element={<OrderPlaceholder />} />
+        <Route path="/cart/*" element={<OrderApp />} />
+        <Route path="/checkout/*" element={<OrderApp />} />
+        <Route path="/orders/*" element={<OrderApp />} />
+        <Route path="/order-status/*" element={<OrderApp />} />
+        <Route path="/order-summary/*" element={<OrderApp />} />
+        <Route path="/order-tracking/*" element={<OrderApp />} />
       </Routes>
     </ErrorBoundary>
   );
